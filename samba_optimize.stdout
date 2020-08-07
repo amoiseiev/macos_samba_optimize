@@ -1,0 +1,20 @@
+Setting desktop services network browsing detault
+
+Removing MacOS IO throttling
+debug.lowpri_throttle_enabled: 0 -> 0
+[Fri Aug 7 14:03:34 EDT 2020] Staring samba_optimize
+Setting desktop services network browsing detault
+
+Removing MacOS IO throttling
+debug.lowpri_throttle_enabled: 1 -> 0
+Usage: (init|remove|run)
+Usage: (init|remove|run)
+Usage: (init|remove|run)
+Usage: (init|remove|run)
+Usage: (init|remove|run)
+Usage: (init|remove|run)
+Usage: (init|remove|run)
+[Fri Aug 7 14:16:09 EDT 2020] Staring samba_optimize
+Usage: (init|remove|run)
+[Fri Aug 7 14:17:35 EDT 2020] Staring samba_optimize
+Usage: (init|remove|run)
