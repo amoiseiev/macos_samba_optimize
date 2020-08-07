@@ -1,4 +1,4 @@
-# Optimizing Samba performance for MacOS catalina
+# Optimizing SMB performance for macOS Catalina
 
 Implements:
 
@@ -7,7 +7,7 @@ https://support.apple.com/en-us/HT205926
 
 and common internet workaround for "Time Machine": `sysctl debug.lowpri_throttle_enabled=0`
 
-that particular sysctl setting DOES affect SMB performance even for regular usage. In my case 10x decrease when the throttling kicks in at seemeingly random moments.
+this particular sysctl setting DOES affect SMB performance even for regular usage. In my case 10x decrease when the throttling kicks in at seemeingly random moments.
 
 The script allows running sysctl without sudo password, adds itself to user's launchd Agent configuration for resetting sysctl on login. It DOES NOT require disabling System Integrity Protection.
 
