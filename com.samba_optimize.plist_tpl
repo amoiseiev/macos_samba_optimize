@@ -5,7 +5,12 @@
 		<key>Label</key>
 		<string>com.samba_optimize.app</string>
 		<key>Program</key>
-		<string>/Users/<CHANGEME>/Scripts/samba_optimize/samba_optimize.sh</string>
+		<string><PATHTOFILE>/samba_optimize.sh</string>
+		<key>ProgramArguments</key>
+    			<array>
+    			    <string><PATHTOFILE>/samba_optimize.sh</string>
+    			    <string>run</string>
+    			</array>
 		<key>RunAtLoad</key>
 		<true/>
     		<key>KeepAlive</key>
@@ -13,8 +18,8 @@
     		<key>LaunchOnlyOnce</key>        
     		<true/>
     		<key>StandardOutPath</key>
-    		<string>/Users/<CHANGEME>/Scripts/samba_optimize/samba_optimize.stdout</string>
+    		<string><PATHTOFILE>/samba_optimize.stdout</string>
     		<key>StandardErrorPath</key>
-    		<string>/Users/<CHANGEME>/Scripts/samba_optimize/samba_optimize.stderr</string>
+    		<string><PATHTOFILE>/samba_optimize.stderr</string>
 	</dict>
 </plist>

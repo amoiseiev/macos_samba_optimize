@@ -4,6 +4,7 @@ NSMB_TMP=/etc/nsmb.conf_tmp
 NSMB=/etc/nsmb.conf
 ID=`whoami`
 SELF=$0
+SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 init() {
 	echo "Checking UID"
@@ -50,7 +51,7 @@ init() {
 	echo
 	rm -fv com.samba_optimize.plist
 	cp -fv com.samba_optimize.plist_tpl com.samba_optimize.plist
-	sed -i '' -e "s/<CHANGEME>/$ID/g" com.samba_optimize.plist
+	sed -i '' -e "s/<PATHTOFILE>/${SCRIPTPATH//\//\\/}/g" com.samba_optimize.plist
 	mv -fv com.samba_optimize.plist ~/Library/LaunchAgents/
 	echo "Adding to launchd configuration"
 	launchctl load -w ~/Library/LaunchAgents/com.samba_optimize.plist
@@ -76,6 +77,7 @@ remove() {
 
 main() {
 	echo \[`date`\] "Staring samba_optimize"
+	echo $SCRIPTPATH/$SELF
 
     	case "$1" in
         	"init" )
