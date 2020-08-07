@@ -69,10 +69,24 @@ run() {
 
 remove() {
 	echo "Removing nsmb.conf file"
+	sudo rm -fv $NSMB
 	echo "Resetting default network folders browsing conf"
+	defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool FALSE
+	defaults read com.apple.desktopservices DSDontWriteNetworkStores
 	echo "Removing samba_optimize from auto start"
+	set +e
+	launchctl remove com.samba_optimize
+	set -e
+	rm -fv ~/Library/LaunchAgents/com.samba_optimize.plist
 	echo "Removing logs"
+	set +e
+	rm -fv $SCRIPTPATH/*.std*
+	set -e
 	echo "Removing sudoers record"
+	sudo sed -i '' "/^$ID.*\/usr\/sbin\/sysctl$/d" /etc/sudoers
+	echo "Resetting IO throttling back to enabled"
+	sudo /usr/sbin/sysctl debug.lowpri\_throttle_enabled=1
+	echo "Done"
 }
 
 main() {
