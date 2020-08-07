@@ -2,8 +2,8 @@
 
 Implements:
 
->https://support.apple.com/en-us/HT208209
->https://support.apple.com/en-us/HT205926
+>https://support.apple.com/en-us/HT208209  
+https://support.apple.com/en-us/HT205926
 
 and common internet workaround for "Time Machine": `sysctl debug.lowpri_throttle_enabled=0`
 
@@ -13,6 +13,6 @@ The script allows running sysctl without sudo password, adds itself to user's la
 
 ## Usage
 
->`samba_optimize.sh init` (will ask for your password), adds configuration tweaks and applies sysctl change
->`samba_optimize.sh run` (apply sysctl change, the mode it run on user login)
->`samba_optimize.sh remove` (remove the tweaks and clean up the logs)
+>`samba_optimize.sh init` (will ask for your password), adds configuration tweaks and applies sysctl change  
+`samba_optimize.sh run` (apply sysctl change, the mode it run on user login)  
+`samba_optimize.sh remove` (remove the tweaks and clean up the logs)
